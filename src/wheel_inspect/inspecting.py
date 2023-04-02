@@ -153,6 +153,7 @@ def inspect(obj):  # (DistInfoProvider) -> dict
     metadata.pop("BODY", None)
     readme = metadata.get("description")
     if readme is not None:
+        metadata["readme"] = readme
         metadata["description"] = {"length": len(metadata["description"])}
         dct = metadata.get("description_content_type")
         if dct is None or split_content_type(dct)[:2] == ("text", "x-rst"):
